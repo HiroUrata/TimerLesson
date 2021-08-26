@@ -11,9 +11,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       
+        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(changeBackGroundColor), userInfo: nil, repeats: true)
+        
     }
 
+    @objc func changeBackGroundColor(){
+        
+        view.backgroundColor = UIColor(red: CGFloat.random(in: 0...255) / 255.0, green: CGFloat.random(in: 0...255) / 255.0, blue: CGFloat.random(in: 0...255) / 255.0, alpha: CGFloat.random(in: 0...1.0))
+        
+    }
 
 }
 
